@@ -19,8 +19,11 @@ elif platform.system() == 'Windows':
     path = "c:/Windows/Fonts/malgun.ttf"
     font_name = font_manager.FontProperties(fname=path).get_name()
     rc('font', family=font_name)
-else:
-    print('Unknown system...')
+elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+        #!wget "https://www.wfonts.com/download/data/2016/06/13/malgun-gothic/malgun.ttf"
+        #!mv malgun.ttf /usr/share/fonts/truetype/
+        #font_manager._rebuild() 
+        plt.rc('font', family='Malgun Gothic') 
 
 
 
