@@ -2,8 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
+
 
 # select_dict = {
 #         '조사시작일': 'date', 
@@ -34,21 +33,34 @@ import plotly.graph_objects as go
 #         ]
 
 def bar_chart(df, select_dict, group_list):
-    st.header('평균 여가시간 차트를 보여줍니다.')
-    value_list = ['lsr_work', 'lsr_weekend', 'lsr_tot']
+    st.subheader('평균 여가시간 차트를 보여줍니다.')
+    value_list = ['lsr_tot', 'lsr_weekend', 'lsr_work']
     selected_group = st.selectbox('그룹을 선택해주세요', group_list, key='bar')
     
     if selected_group == '전체':
         df_bar = df[value_list].mean().to_frame()
-        df_bar.rename(columns={0:'전체 평균'}, inplace=True)
+        df_bar.rename(columns={0:'전체 데이터'}, inplace=True)
         fig = px.bar(df_bar.T, y=df_bar.index, barmode='group')
+        fig.update_layout(
+            title=dict(text='<b>주간, 휴일, 평일의 평균 여가시간</b>'),
+            xaxis_title="<b></b>",
+            yaxis_title="<b>시간</b>",
+            showlegend=True
+        )
         st.plotly_chart(fig)
 
     else:  
-        pass  
-        # 서브플롯 설정
-        # fig = make_subplots(rows=1, cols=3)
-        # fig.add_trace(go.Bar(df_bar, x='전체 평균', y=))
+        df_bar = pd.pivot_table(df, index=select_dict[selected_group], aggfunc=np.mean, values=value_list)  
+        df_bar = df_bar.sort_values('lsr_tot', ascending=False)
+
+        fig = px.bar(df_bar, x=df_bar.index, y=df_bar.columns, barmode='group')
+        fig.update_layout(
+            title=dict(text='<b>주간, 휴일, 평일의 평균 여가시간</b>'),
+            xaxis_title="<b>{}</b>".format(selected_group),
+            yaxis_title="<b>시간</b>",
+            showlegend=True
+        )
+        st.plotly_chart(fig)
 
     
 # def pie_chart(df, select_dict, group_list):

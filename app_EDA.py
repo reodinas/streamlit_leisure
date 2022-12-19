@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import plotly.express as px
-from my_function import timeseries_chart, pie_chart
-from 연습 import bar_chart
+from my_function import timeseries_chart, pie_chart, bar_chart
+
 
 def run_eda_app(df):
     # 유저에게 입력받기
@@ -34,10 +34,11 @@ def run_eda_app(df):
         '여가시간 중 대인관계 비율',
         '여가시간 중 기타 비율'
         ]
-    bar_chart(df, select_dict, group_list)
 
+    st.header('')
+    bar_chart(df, select_dict, group_list)
+    st.header('')
     pie_chart(df, select_dict, group_list)
     st.header('')
-
     timeseries_chart(df, select_dict, group_list, col_list)
     
