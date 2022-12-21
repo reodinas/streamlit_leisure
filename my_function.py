@@ -31,9 +31,7 @@ def timeseries_chart(df, select_dict, group_list, col_list):
 
     if selected_group == '전체':
         df_plot = df_pivot[select_dict[selected_col]].to_frame()
-    elif selected_group == '가구소득':
-        # 무응답 제거
-        df_plot = df_pivot[select_dict[selected_col]].unstack().iloc[ : , :-1]
+    
     else:
         df_plot = df_pivot[select_dict[selected_col]].unstack()
 
@@ -77,7 +75,7 @@ def pie_chart(df, select_dict, group_list):
     if selected_group == '전체':
         df_pie = df.loc[:, value_list]
 
-        fig = px.pie(df_pie, values=df_pie.mean(), names=df_pie.columns, title='{} 여가시간 평균 사용비율'.format(selected_group), hole=0.3)
+        fig = px.pie(df_pie, values=df_pie.mean(), names=df_pie.columns, title='<b>{} 여가시간 평균 사용비율</b>'.format(selected_group), hole=0.3)
         # text를 차트 안에 삽입, textinfo 설정
         fig.update_traces(textposition="inside", textinfo="percent+label")
         

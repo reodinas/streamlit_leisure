@@ -73,19 +73,17 @@ def main():
         
     
 
-    menu = ['Home', 'EDA', 'ML', 'admin']
+    menu = ['Home', 'Chart', 'admin']
 
     choice = st.sidebar.selectbox('메뉴', menu)
 
     if choice == 'Home':
         run_home_app(df_user)
 
-    elif choice == 'EDA':
+    elif choice == 'Chart':
         run_eda_app(df_user)
 
-    elif choice == 'ML':
-        pass
-
+    
     elif choice == 'admin':
         run_admin_app(df_origin)
 

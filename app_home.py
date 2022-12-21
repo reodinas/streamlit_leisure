@@ -6,7 +6,7 @@ import streamlit as st
 
 
 def run_home_app(df):
-    st.subheader('한국인의 여가문화 시간 및 사용 비중을 조사한 데이터를 분석하는 앱입니다.')
+    st.subheader('여가문화 시간 및 사용 비중을 보여주는 앱입니다.')
     st.subheader('')
     
     st.dataframe(df)
@@ -23,11 +23,10 @@ def run_home_app(df):
     # st.text('relation: 여가시간 중 대인관계 비율,    etc: 여가시간 중 기타 비율')
     # st.text('rest + hobby + self + relation + etc = 100(%)')
  
-    st.subheader('1. EDA 페이지에서는 이 데이터를 시각화해서 분석합니다.')
+    st.subheader('1. Chart 페이지에서는 이 데이터를 시각화해서 보여줍니다.')
     st.subheader('')
-    st.subheader('2. ML 페이지에서는 가구소득을 무응답한 사람들의 소득정도를 분류 예측합니다.')
-    st.subheader('')
-    st.subheader('3. admin 페이지에서는 관리자로서 매주 추가 조사되는 이 데이터를 지속 관리할 수 있습니다.')
+    
+    st.subheader('2. Admin 페이지에서는 관리자로서, 매주 추가 조사되는 이 데이터를 지속 관리할 수 있습니다.')
     st.subheader('')
     st.header('')
     st.text('데이터 출처 : 문화 빅데이터 플랫폼 - 하루 평균 여가문화 시간 및 사용 비중')
