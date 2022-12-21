@@ -20,46 +20,12 @@
 
 여가시간에 대해 조사한 위와 같은 데이터가 매주 업데이트 됩니다.
 
-출처:
+출처: [문화 빅데이터 플랫폼](https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=e057a550-f06b-11ec-a6e8-cdf27550dc0d)
 
 
 
 
 
-사용된 라이브러리
-----
-- streamlit
-``` python
-pip install streamlit
-```
-- streamlit_option_menu
-``` python
-pip install streamlit_option_menu
-```
-- pandas
-``` python
-pip install streamlit_option_menu
-```
-- seaborn
-``` python
-pip install seaborn
-```
-- matplotlib
-``` python
-pip install matplotlib
-```
-- joblib
-``` python
-pip install joblib
-```
-- numpy
-``` python
-pip install numpy
-```
-- plotly
-``` python
-pip install plotly
-```
 
 
 
