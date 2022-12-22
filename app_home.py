@@ -8,7 +8,7 @@ def run_home_app(df):
     check = st.checkbox('데이터 보기/숨기기', value=True)
     if check:
         st.dataframe(df)
-        st.write(f'전체 데이터는 {df.shape[0]}행, {df.shape[1]}열 입니다')
+        st.write(f'전체 데이터는 {df.shape[0]}행,  {df.shape[1]}열 입니다')
         examine_date = df['날짜'].unique()
         st.write(f'전체 데이터의 조사 날짜는 {examine_date[0]} 부터 {examine_date[-1]} 까지 입니다.')
         st.write('')    
@@ -44,7 +44,7 @@ def run_home_app(df):
                         df_new = df[df[selected_group].apply(lambda x: x in selected_group2)][selected_col]
 
         st.dataframe(df_new)
-        st.write(f'{df.shape[0]}행, {df.shape[1]}열')
+        st.write(f'{df_new.shape[0]}행,  {df_new.shape[1]}열')
         
 
     st.subheader('')
