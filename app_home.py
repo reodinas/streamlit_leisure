@@ -1,26 +1,49 @@
 import streamlit as st
 
 
-
-
 def run_home_app(df):
-    st.subheader('여가문화 시간 및 사용 비중을 보여주는 앱입니다.')
-    st.subheader('')
     
-    st.dataframe(df)
-    st.write(f'현재 데이터는 {df.shape[0]}행,  {df.shape[1]}열 입니다')
-    examine_date = df['날짜'].unique()
-    st.write(f'현재 데이터의 조사 날짜는 {examine_date[0]} 부터 {examine_date[-1]} 까지 입니다.')
-    st.write('')
-    # st.subheader('컬럼 정의')
-    # st.text('RESPOND_ID: 응답자ID,    date: 조사날짜,     gender: 성별')
-    # st.text('age: 연령대,             area: 거주지역,     income: 가구소득정도')
-    # st.text('lsr_work: 평일 일 평균 여가시간,       lsr_weekend: 주말 일 평균 여가시간')
-    # st.text('lsr_tot: 1주간 총 여가시간,           rest: 여가시간 중 휴식 및 오락 비율')
-    # st.text('hobby: 여가시간 중 취미생활 비율,      self: 여가시간 중 자기개발 비율')
-    # st.text('relation: 여가시간 중 대인관계 비율,    etc: 여가시간 중 기타 비율')
-    # st.text('rest + hobby + self + relation + etc = 100(%)')
- 
+    st.subheader('여가문화 시간 및 사용 비중을 분석하는 앱입니다.')
+    st.subheader('')
+    check = st.checkbox('데이터 보기/숨기기', value=True)
+    if check:
+        st.dataframe(df)
+        st.write(f'전체 데이터는 {df.shape[0]}행,  {df.shape[1]}열 입니다')
+        examine_date = df['날짜'].unique()
+        st.write(f'전체 데이터의 조사 날짜는 {examine_date[0]} 부터 {examine_date[-1]} 까지 입니다.')
+        st.write('')    
+
+    # 그룹별로 보기
+    check2 = st.checkbox('선택한 데이터만 보고 싶으면 체크해 주세요.')
+    if check2:
+        group_list = ['전체', '성별', '연령대', '거주지역', '가구소득', '날짜']
+        selected_group = st.selectbox('그룹별로 보기', group_list)
+
+        if selected_group == '전체':
+
+            selected_col = st.multiselect('보고 싶은 컬럼을 선택하세요.', ['모든 컬럼'] + list(df.columns))
+
+            if selected_col:
+                if '모든 컬럼' in selected_col:
+                    st.dataframe(df)
+                else:
+                    st.dataframe(df[selected_col])
+        else:
+            group_list2 = sorted(df[selected_group].unique())
+            selected_group2 = st.multiselect('보고 싶은 값을 선택하세요.', group_list2)
+
+            if selected_group2:
+                selected_col = st.multiselect('보고 싶은 컬럼을 선택하세요.', ['모든 컬럼'] + list(df.columns))
+
+                if selected_col:
+                    if '모든 컬럼' in selected_col:
+                        df2 = df[df[selected_group].apply(lambda x: x in selected_group2)]
+                    else:
+                        df2 = df[df[selected_group].apply(lambda x: x in selected_group2)][selected_col]
+
+                    st.dataframe(df2)
+        
+    st.subheader('')
     st.subheader('1. Chart 페이지에서는 이 데이터를 시각화해서 보여줍니다.')
     st.subheader('')
     
@@ -31,7 +54,7 @@ def run_home_app(df):
     st.write('https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=e057a550-f06b-11ec-a6e8-cdf27550dc0d')
     st.subheader('')
     
-
+    
     
     
    
