@@ -1,19 +1,22 @@
 ⏲ 한국인의 여가 문화 시간 및 사용 비중
 ========
 
-여가 시간이 얼마나 되고, 여가 시간을 어떻게 사용하는 지를 차트로 시각화 한 앱입니다.
+여가 시간이 얼마나 되고, 여가 시간을 어떻게 사용하는 지를 분석하는 앱입니다.
 
 
 
 # Preview
-![](https://user-images.githubusercontent.com/120348461/208856740-7561748c-eecc-490c-92c6-8a97b0c7d259.jpg)
-![](https://user-images.githubusercontent.com/120348461/208857008-022ff65a-aece-4333-bd7d-dc057a6189de.jpg)
-![](https://user-images.githubusercontent.com/120348461/209053643-61930d8c-fe93-46a5-941d-98dbf005a43a.jpg)
-![](https://user-images.githubusercontent.com/120348461/209053651-5b914a5a-d7c2-4f1c-bc50-103ed7b29f56.jpg)
+![](https://user-images.githubusercontent.com/120348461/209132918-ddcf33eb-d92d-4906-b2ab-636ebedaa665.jpg)
+![](https://user-images.githubusercontent.com/120348461/209132930-5691511a-5776-477e-8ca2-a925a5d1e087.jpg)
+![](https://user-images.githubusercontent.com/120348461/209132939-20211eb3-c9e6-4a45-a831-7455b0a30cc8.jpg)
+![](https://user-images.githubusercontent.com/120348461/209132960-88718f42-6bcf-4e04-89f1-6bc770732b63.jpg)
+![](https://user-images.githubusercontent.com/120348461/209132976-6f84e740-9776-41a6-8abd-6a787244920f.jpg)
+![](https://user-images.githubusercontent.com/120348461/209132988-b96ca40d-6af4-4cd7-8bca-a7bd7dd8b3f2.jpg)
 
 
 # Overview
 * 이 웹 대시보드에서 사용한 여가시간에 관련된 데이터는 매주 설문조사하여 추가 공개됩니다.
+* Home 에서는 데이터를 사용자가 원하는 조건만 골라 볼 수 있도록 구현했습니다.
 * admin 페이지를 만들어 추가된 csv 파일을 업로드하면 데이터를 자동으로 합치고 서버에 저장하도록 구현했습니다.
 * Chart 페이지에서 현재 서버에 저장된 데이터를 시각화한 차트를 구현했습니다.
 * AWS EC2 서버를 사용했습니다.
@@ -28,10 +31,12 @@
 ![enter image description here](https://user-images.githubusercontent.com/120348461/208861638-638d045e-4503-45cc-880d-08856dd2a705.jpg)
 
 여가시간에 대해 조사한 위와 같은 데이터가 매주 업데이트 됩니다.
-
+<br>
+<br>
+<br>
 출처: 문화 빅데이터 플랫폼 - 하루 평균 여가문화 시간 및 사용 비중
 
-     <https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=e057a550-f06b-11ec-a6e8-cdf27550dc0d>
+<https://www.bigdata-culture.kr/bigdata/user/data_market/detail.do?id=e057a550-f06b-11ec-a6e8-cdf27550dc0d>
 
 # Columns
 * `RESPOND_ID` : 응답자ID
@@ -65,12 +70,28 @@
 * `Classification.ipynb`: 머신러닝을 할 때 테스트한 코드
 
 # Connection URL
-
-
+<http://ec2-3-39-253-47.ap-northeast-2.compute.amazonaws.com:8502/>
+<br>
 # Debugging
+프로젝트 진행 중 발생한 에러와 해결방법은 티스토리에 정리해 두었습니다.
 
+[<img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white">](https://donghyeok90.tistory.com/category/Debugging)
 
 # Improvement
+
+이 데이터는 Null 값은 없지만 가구소득정보에 응답하지 않은 데이터는 무응답이라고 저장되어 있습니다.
+
+그리고 정보에 가명처리를 해서인지, 가구소득정보는 수치가 아니라 범위로 구분되어 있습니다.
+
+그래서 머신러닝 분류모델을 이용해 무응답한 사람들의 소득정도를 예측하려 했습니다.
+
+하지만 상관계수를 확인해 본 결과 상관관계가 거의 보이지 않았고,
+
+Scikit-learn의 DecisionTree, LogisticRegression, SVC, RandomForest 모델들을 사용해 머신러닝한 결과, 정확도가 모두 30% 대에 그쳤습니다.
+
+딥러닝 알고리즘을 사용해 볼 수도 있겠지만. AWS 프리티어의 사양으로 딥러닝이 탑재된 앱을 개발하기엔 무리라고 판단했습니다.
+
+추후에 기회가 된다면 딥러닝으로 다시 학습시켜보도록 하겠습니다.
 
 
 
