@@ -1,5 +1,3 @@
-# streamlit_preoject1
-
 ⏲ 한국인의 여가 문화 시간 및 사용 비중
 ========
 
@@ -9,8 +7,14 @@
 ![enter image description here](https://user-images.githubusercontent.com/120348461/208856740-7561748c-eecc-490c-92c6-8a97b0c7d259.jpg)
 ![enter image description here](https://user-images.githubusercontent.com/120348461/208857008-022ff65a-aece-4333-bd7d-dc057a6189de.jpg)
 
-# Menu
-- Home: 데이터와 데이터의 출처, 메뉴에 대한 설명을 나타냅니다.
+# Overview
+* 이 웹 대시보드에서 사용한 여가시간에 관련된 데이터는 매주 설문조사하여 추가 공개됩니다.
+* admin 페이지를 만들어 추가된 csv 파일을 업로드하면 데이터를 자동으로 합치고 서버에 저장하도록 구현했습니다.
+* Chart 페이지에서 현재 서버에 저장된 데이터를 시각화한 차트를 구현했습니다.
+* AWS EC2 서버를 사용했습니다.
+* GitHub Actions를 사용하여 CI/CD 합니다.
+
+
 - Chart: 원하는 데이터를 보기 쉽게 차트로 시각화 합니다.
 - admin: 관리자 컨셉으로 만든 페이지 입니다.  매주 추가 조사해 제공되는 데이터를 지속적으로 관리할 수 있습니다.
 
