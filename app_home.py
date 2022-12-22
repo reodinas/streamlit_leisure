@@ -26,12 +26,13 @@ def run_home_app(df):
             if selected_col:
                 if '모든 컬럼' in selected_col:
                     df_new = df
+                    st.dataframe(df_new)
+                    st.write(f'선택하신 데이터는 {df_new.shape[0]}행,  {df_new.shape[1]}열 입니다.')
                     
                 else:
                     df_new = df[selected_col]
-                    
-                st.dataframe(df_new)
-                st.write(f'{df_new.shape[0]}행,  {df_new.shape[1]}열')
+                    st.dataframe(df_new)
+                    st.write(f'선택하신 데이터는 {df_new.shape[0]}행,  {df_new.shape[1]}열 입니다.')
                     
         else:
             group_list2 = sorted(df[selected_group].unique())
@@ -43,11 +44,13 @@ def run_home_app(df):
                 if selected_col:
                     if '모든 컬럼' in selected_col:
                         df_new = df[df[selected_group].apply(lambda x: x in selected_group2)]
+                        st.dataframe(df_new)
+                        st.write(f'선택하신 데이터는 {df_new.shape[0]}행,  {df_new.shape[1]}열 입니다.')
+
                     else:
                         df_new = df[df[selected_group].apply(lambda x: x in selected_group2)][selected_col]
-
-                    st.dataframe(df_new)
-                    st.write(f'{df_new.shape[0]}행,  {df_new.shape[1]}열')
+                        st.dataframe(df_new)
+                        st.write(f'선택하신 데이터는 {df_new.shape[0]}행,  {df_new.shape[1]}열 입니다')
         
 
     st.subheader('')
