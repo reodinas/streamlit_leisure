@@ -4,6 +4,22 @@ import streamlit as st
 import plotly.express as px
 
 
+# 백그라운드 이미지 함수
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117276.jpg?w=2000");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+
 # 시계열차트
 def timeseries_chart(df, select_dict, group_list, col_list):
     pivot_value = ['평일여가시간', '주말여가시간', '주간총여가시간', '휴식오락비율', '취미생활비율', '자기개발비율', '대인관계비율', '기타비율']
