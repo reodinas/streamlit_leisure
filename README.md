@@ -6,8 +6,11 @@
 
 
 # Preview
-![enter image description here](https://user-images.githubusercontent.com/120348461/208856740-7561748c-eecc-490c-92c6-8a97b0c7d259.jpg)
-![enter image description here](https://user-images.githubusercontent.com/120348461/208857008-022ff65a-aece-4333-bd7d-dc057a6189de.jpg)
+![](https://user-images.githubusercontent.com/120348461/208856740-7561748c-eecc-490c-92c6-8a97b0c7d259.jpg)
+![](https://user-images.githubusercontent.com/120348461/208857008-022ff65a-aece-4333-bd7d-dc057a6189de.jpg)
+![](https://user-images.githubusercontent.com/120348461/209053643-61930d8c-fe93-46a5-941d-98dbf005a43a.jpg)
+![](https://user-images.githubusercontent.com/120348461/209053651-5b914a5a-d7c2-4f1c-bc50-103ed7b29f56.jpg)
+
 
 # Overview
 * 이 웹 대시보드에서 사용한 여가시간에 관련된 데이터는 매주 설문조사하여 추가 공개됩니다.
@@ -61,11 +64,13 @@
 * `lsr_eda.ipynb`: 차트를 만들 때 테스트한 코드
 * `Classification.ipynb`: 머신러닝을 할 때 테스트한 코드
 
-# Connect URL
+# Connection URL
 
 
+# Debugging
 
-# 개선할 점
+
+# Improvement
 
 
 
