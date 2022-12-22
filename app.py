@@ -26,7 +26,7 @@ from app_EDA import run_eda_app
 def main():
     st.title('한국인의 여가문화 시간 및 사용 비중')
 
-    df_origin = pd.read_csv('data/df_origin.csv', index_col=0)
+    df_origin = pd.read_csv('df_origin.csv', index_col=0)
 
     # 컬럼명 변경
     df = df_origin.copy()

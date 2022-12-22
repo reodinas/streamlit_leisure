@@ -49,7 +49,7 @@ def run_admin_app(df_origin):
                                     df_origin.dropna(axis=0, inplace=True)
                                     df_origin = df_origin.sort_values((['EXAMIN_BEGIN_DE', 'RESPOND_ID']))
                                     df_origin = df_origin.reset_index().drop('index', axis=1)
-                                    df_origin.to_csv('data/df_origin.csv')
+                                    df_origin.to_csv('df_origin.csv')
 
                                     st.success('저장에 성공했습니다.')
                                     
