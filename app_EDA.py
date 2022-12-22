@@ -1,7 +1,4 @@
-import pandas as pd
-import numpy as np
 import streamlit as st
-import plotly.express as px
 from my_function import timeseries_chart, pie_chart, bar_chart
 
 

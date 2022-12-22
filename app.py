@@ -1,13 +1,9 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
-import os
 from app_admin import run_admin_app
 from app_home import run_home_app
 from app_EDA import run_eda_app
 
-import matplotlib.pyplot as plt
-import seaborn as sb
 
 # import platform
 # from matplotlib import font_manager, rc
