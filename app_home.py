@@ -30,6 +30,9 @@ def run_home_app(df):
                 else:
                     df_new = df[selected_col]
                     
+                st.dataframe(df_new)
+                st.write(f'{df_new.shape[0]}행,  {df_new.shape[1]}열')
+                    
         else:
             group_list2 = sorted(df[selected_group].unique())
             selected_group2 = st.multiselect('보고 싶은 값을 선택하세요.', group_list2)
@@ -43,8 +46,8 @@ def run_home_app(df):
                     else:
                         df_new = df[df[selected_group].apply(lambda x: x in selected_group2)][selected_col]
 
-        st.dataframe(df_new)
-        st.write(f'{df_new.shape[0]}행,  {df_new.shape[1]}열')
+                    st.dataframe(df_new)
+                    st.write(f'{df_new.shape[0]}행,  {df_new.shape[1]}열')
         
 
     st.subheader('')
