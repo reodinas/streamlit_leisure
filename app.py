@@ -7,6 +7,7 @@ from app_EDA import run_eda_app
 
 # import platform
 # from matplotlib import font_manager, rc
+
 # plt.rcParams['axes.unicode_minus'] = False
 
 # if platform.system() == 'Darwin':
@@ -15,11 +16,12 @@ from app_EDA import run_eda_app
 #     path = "c:/Windows/Fonts/malgun.ttf"
 #     font_name = font_manager.FontProperties(fname=path).get_name()
 #     rc('font', family=font_name)
-# elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
-#         #!wget "https://www.wfonts.com/download/data/2016/06/13/malgun-gothic/malgun.ttf"
-#         #!mv malgun.ttf /usr/share/fonts/truetype/
-#         #font_manager._rebuild() 
-#         plt.rc('font', family='Malgun Gothic') 
+
+# # 이 코드는 ec2에 한글폰트가 설치되어 있어야 하고,
+# # 파이썬에서 한글 사용가능하도록 먼저 셋팅해야 한다.
+# # https://luvris2.tistory.com/119
+# elif platform.system() == 'Linux': #
+#     plt.rc('font', family='Malgun Gothic') 
 
 
 
