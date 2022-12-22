@@ -5,12 +5,12 @@ import plotly.express as px
 
 
 # 백그라운드 이미지 함수
-def add_bg_from_url():
+def add_bg_from_url(img_url):
     st.markdown(
          f"""
          <style>
          .stApp {{
-             background-image: url("https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117276.jpg?w=2000");
+             background-image: url({img_url});
              background-attachment: fixed;
              background-size: cover
          }}

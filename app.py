@@ -32,7 +32,7 @@ from my_function import add_bg_from_url
 
 def main():
     # 백그라운드 이미지
-    add_bg_from_url() 
+    add_bg_from_url("https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117276.jpg?w=2000") 
 
     st.title('한국인의 여가문화 시간 및 사용 비중')
     st.subheader('')
