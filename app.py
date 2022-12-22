@@ -3,6 +3,7 @@ import pandas as pd
 from app_admin import run_admin_app
 from app_home import run_home_app
 from app_EDA import run_eda_app
+from my_function import add_bg_from_url
 
 
 # import platform
@@ -25,29 +26,36 @@ from app_EDA import run_eda_app
 
 
 
-def main():
-    st.title('한국인의 여가문화 시간 및 사용 비중')
 
+
+
+
+def main():
+    # 백그라운드 이미지
+    add_bg_from_url() 
+
+    st.title('한국인의 여가문화 시간 및 사용 비중')
+    st.subheader('')
     df_origin = pd.read_csv('df_origin.csv', index_col=0)
 
-    # 컬럼명 변경
-    df = df_origin.copy()
-    df = df.rename(columns={'EXAMIN_BEGIN_DE':'date', 
-                        'SEXDSTN_FLAG_CD': 'gender',
-                        'AGRDE_FLAG_NM': 'age',
-                        'ANSWRR_OC_AREA_NM': 'area',
-                        'HSHLD_INCOME_DGREE_NM': 'income',
-                        'WORKDAY_DAY_AVRG_LSR_TIME_VALUE': 'lsr_work',
-                        'WKEND_DAY_AVRG_LSR_TIME_VALUE': 'lsr_weekend',
-                        'ONE_WEEK_TOT_LSR_TIME_VALUE': 'lsr_tot',
-                        'LSR_TIME_REST_RCRT_USE_RATE': 'rest',
-                        'LSR_TIME_HOBBY_USE_RATE': 'hobby',
-                        'LSR_TIME_SELF_IMPT_USE_RATE': 'self',
-                        'LSR_TIME_TWDPSN_RLTN_FLWSP_USE_RATE': 'relation',
-                        'LSR_TIME_ETC_USE_RATE': 'etc'
-                        })
+    # # 컬럼명 변경
+    # df = df_origin.copy()
+    # df = df.rename(columns={'EXAMIN_BEGIN_DE':'date', 
+    #                     'SEXDSTN_FLAG_CD': 'gender',
+    #                     'AGRDE_FLAG_NM': 'age',
+    #                     'ANSWRR_OC_AREA_NM': 'area',
+    #                     'HSHLD_INCOME_DGREE_NM': 'income',
+    #                     'WORKDAY_DAY_AVRG_LSR_TIME_VALUE': 'lsr_work',
+    #                     'WKEND_DAY_AVRG_LSR_TIME_VALUE': 'lsr_weekend',
+    #                     'ONE_WEEK_TOT_LSR_TIME_VALUE': 'lsr_tot',
+    #                     'LSR_TIME_REST_RCRT_USE_RATE': 'rest',
+    #                     'LSR_TIME_HOBBY_USE_RATE': 'hobby',
+    #                     'LSR_TIME_SELF_IMPT_USE_RATE': 'self',
+    #                     'LSR_TIME_TWDPSN_RLTN_FLWSP_USE_RATE': 'relation',
+    #                     'LSR_TIME_ETC_USE_RATE': 'etc'
+    #                     })
     # 조사날짜 컬럼 타입변경
-    df['date'] = pd.to_datetime(df['date'], format='%Y%m%d').dt.strftime('%Y-%m-%d')
+    # df['date'] = pd.to_datetime(df['date'], format='%Y%m%d').dt.strftime('%Y-%m-%d')
 
 
     # 유저친화적 데이터프레임
@@ -74,6 +82,7 @@ def main():
     menu = ['Home', 'Chart', 'admin']
 
     choice = st.sidebar.selectbox('메뉴', menu)
+    st.sidebar.image('https://user-images.githubusercontent.com/120348461/209071277-856075be-4bee-4304-98fc-277deced5379.jpg')
 
     if choice == 'Home':
         run_home_app(df_user)
@@ -84,8 +93,6 @@ def main():
     
     elif choice == 'admin':
         run_admin_app(df_origin)
-
-    
 
 
 
