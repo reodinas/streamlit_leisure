@@ -37,8 +37,6 @@ def run_admin_app(df_origin):
                         # 두 데이터프레임 컬럼의 길이가 다를 때 예외처리
                         try:
                             # 컬럼명이 같으면
-
-
                             if np.all(df_origin.columns == df_new.columns):
                                 #날짜가 중복되면
                                 if df_new['EXAMIN_BEGIN_DE'].unique() in df_origin['EXAMIN_BEGIN_DE'].unique():
@@ -52,6 +50,11 @@ def run_admin_app(df_origin):
                                     df_origin.to_csv('df_origin.csv')
 
                                     st.success('저장에 성공했습니다.')
+
+                                    st.dataframe(df_origin)
+                                    st.write(f'현재 데이터는 {df_origin.shape[0]}행,  {df_origin.shape[1]}열 입니다')
+                                    examine_date = df_origin['EXAMIN_BEGIN_DE'].unique()
+                                    st.write(f'현재 데이터의 조사 날짜는 {examine_date} 입니다.')
                                     
                             else:
                                 st.error('다른 형식의 파일입니다.')
@@ -63,9 +66,6 @@ def run_admin_app(df_origin):
                     else:
                         st.info('작업을 취소합니다.')
                         
-                st.dataframe(df_origin)
-                st.write(f'현재 데이터는 {df_origin.shape[0]}행,  {df_origin.shape[1]}열 입니다')
-                examine_date = df_origin['EXAMIN_BEGIN_DE'].unique()
-                st.write(f'현재 데이터의 조사 날짜는 {examine_date} 입니다.')
+                    
         else:
             st.error('잘못된 비밀번호 입니다. 비밀번호: abc123')
