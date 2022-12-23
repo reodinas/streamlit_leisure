@@ -30,7 +30,7 @@
 # Dataset
 ![enter image description here](https://user-images.githubusercontent.com/120348461/208861638-638d045e-4503-45cc-880d-08856dd2a705.jpg)
 
-여가시간에 대해 조사한 위와 같은 데이터가 매주 업데이트 됩니다.
+여가시간에 대해 일주일씩 조사한 위와 같은 데이터가 월 단위로 업데이트 됩니다.
 <br>
 <br>
 <br>
