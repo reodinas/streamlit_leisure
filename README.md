@@ -73,7 +73,7 @@
 <http://ec2-3-39-253-47.ap-northeast-2.compute.amazonaws.com:8502/>
 <br>
 # Debugging
-프로젝트 진행 중 발생한 에러와 해결방법은 티스토리에 정리해 두었습니다.
+프로젝트 진행 중 겪은 에러와 해결방법은 티스토리에 정리해 두었습니다.
 
 [<img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white">](https://donghyeok90.tistory.com/category/Debugging)
 
