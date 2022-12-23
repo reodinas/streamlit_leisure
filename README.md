@@ -22,7 +22,7 @@
 * AWS EC2 서버를 사용했습니다.
 * GitHub Actions를 사용하여 CI/CD 합니다.
 
-# Stacks
+# Stack
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"><img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white"><img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=for-the-badge&logo=Amazon EC2&logoColor=white"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white"><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=Linux&logoColor=white">
 
 
@@ -69,7 +69,7 @@
 * `lsr_eda.ipynb`: 차트를 만들 때 테스트한 코드
 * `Classification.ipynb`: 머신러닝을 할 때 테스트한 코드
 
-# Connection URL
+# Usage
 <http://ec2-3-39-253-47.ap-northeast-2.compute.amazonaws.com:8502/>
 <br>
 # Debugging
