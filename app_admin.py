@@ -7,7 +7,7 @@ import pandas as pd
 
 def run_admin_app(df_origin):
     st.info('관리자 전용 페이지 입니다.')
-    password = st.text_input('비밀번호를 입력하세요. (abc123)', type='password')
+    password = st.text_input('비밀번호를 입력하세요.', type='password')
     if password:
         if password == 'abc123':
             st.dataframe(df_origin)
@@ -68,4 +68,4 @@ def run_admin_app(df_origin):
                         
                     
         else:
-            st.error('잘못된 비밀번호 입니다. 비밀번호: abc123')
+            st.error('잘못된 비밀번호 입니다.')
