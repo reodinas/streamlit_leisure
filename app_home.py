@@ -12,8 +12,10 @@ def run_home_app(df):
         examine_date = df['날짜'].unique()
         st.write(f'전체 데이터의 조사 날짜는 {examine_date[0]} 부터 {examine_date[-1]} 까지 입니다.')
         st.write('')    
-
+    st.subheader('')    
+    
     # 그룹별로 보기
+    st.subheader('데이터 선택해서 보기')
     check2 = st.checkbox('선택한 데이터만 보고 싶으면 체크해 주세요.')
     if check2:
         group_list = ['전체', '성별', '연령대', '거주지역', '가구소득', '날짜']
