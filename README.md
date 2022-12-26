@@ -69,9 +69,9 @@
 * `lsr_eda.ipynb`: 차트를 만들 때 테스트한 코드
 * `Classification.ipynb`: 머신러닝을 할 때 테스트한 코드
 
-# Usage
+# Connection URL
 <http://ec2-3-39-253-47.ap-northeast-2.compute.amazonaws.com:8502/>
-<br>admin 페이지 비밀번호 : abc123
+
 # Debugging
 프로젝트 진행 중 겪은 에러와 해결방법은 티스토리에 정리해 두었습니다.
 
